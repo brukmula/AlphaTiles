@@ -27,26 +27,27 @@ public class Ethiopia extends GameActivity {
             R.id.key31, R.id.key32, R.id.key33, R.id.key34, R.id.key35
     };
 
-    //Check if character is in answer
-    public static boolean isAnswer(char letter){
+    //Check if users input is within answer
+    public static boolean containsLetter(char letter, String answer){
+
 
         return false;
     }
 
-    //Compare the number of matching letters from input and answer
+    //Change the suers score based on how many times they have guessed.
+     //If the number of guesses exceeds the number of answers score goes down
 
 
-    //Method to change color of tiles as user plays.
+    //Display Images for game
+
+    //Display dashes
+
+    //Display each letter of the answer
+        //Create X's based on language
+        //With each mistake number of lives goes down by one.
 
 
-    //Insert Dashes to screen for letters to go in
-
-    //Method to add and remove tiles from image
-
-
-    //Keyboard methods
-
-    //
+    //Keyboard
     @Override
     protected int[] getTileButtons() {
         return TILE_BUTTONS;
@@ -66,4 +67,6 @@ public class Ethiopia extends GameActivity {
     protected void centerGamesHomeImage() {
 
     }
+
+    //Screens displays based on when players win and lose
 }
