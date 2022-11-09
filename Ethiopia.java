@@ -1,16 +1,20 @@
 package org.alphatilesapps.alphatiles;
 
+import android.os.Bundle;
+
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.logging.Logger;
 
 public class Ethiopia extends GameActivity {
 
 
-    int keysInUse; //Number of keys in the language's total keyboard
-    int keyboardScreenNo; //For languages with more than 35 keys,page 1 will have 33 buttons and a forward/backward button
+    //Keep track of keys
+    Set<String> keys = new HashSet<String>();
 
-    int totalScreens;
-    int partial;
+    int ethiopiaPoints;
 
     String initial = "";
     String lastWord = "";
@@ -34,18 +38,37 @@ public class Ethiopia extends GameActivity {
         return false;
     }
 
-    //Change the suers score based on how many times they have guessed.
+    //Change the users score based on how many times they have guessed.
      //If the number of guesses exceeds the number of answers score goes down
 
 
     //Display Images for game
+    public void displayImages(){
+
+
+    }
+
 
     //Display dashes
+    public void displayDashes(String word){
+
+        //Based on the length of the word create dashes to appear on the screen
+        int numberOfDashes = word.length();
+
+    }
 
     //Display each letter of the answer
-        //Create X's based on language
+    public void displayLetters() {
+
+
         //With each mistake number of lives goes down by one.
 
+    }
+
+    //Create X's based on language
+    public void createLifeDisplay (){
+
+    }
 
     //Keyboard
     @Override
@@ -68,5 +91,33 @@ public class Ethiopia extends GameActivity {
 
     }
 
+    public static final Logger LOGGER = Logger.getLogger(Ethiopia.class.getName());
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+
+        super.onCreate(savedInstanceState);
+        context = this;
+
+        int gameID = 0;
+
+        if(syllableGame.equals("S")){
+            setContentView(R.layout.ethiopia);
+        }
+    }
+
+    //Load Keyboard
+    public void loadKeyboard(){
+        if (!keys.isEmpty()){
+            keys.clear();
+        }
+        if (!keysList.isEmpty()){
+            keysList.clear();
+        }
+    }
+
+
     //Screens displays based on when players win and lose
+
+
 }
